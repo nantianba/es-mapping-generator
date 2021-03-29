@@ -41,5 +41,7 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <finalName>es-mapping-generator</finalName>
+    </build>
 </project>
