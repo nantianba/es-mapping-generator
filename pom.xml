@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>zy</groupId>
-    <artifactId>es-mapper</artifactId>
+    <artifactId>es-mapping</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1</version>
     <modules>
