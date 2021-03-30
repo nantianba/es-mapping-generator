@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.github.nantianba</groupId>
         <artifactId>es-mapping</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
