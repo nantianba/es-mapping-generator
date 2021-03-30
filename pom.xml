@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>generator</module>
+        <module>es-mapping-generator</module>
     </modules>
 
     <name>Elasticsearch mapping Generator</name>
