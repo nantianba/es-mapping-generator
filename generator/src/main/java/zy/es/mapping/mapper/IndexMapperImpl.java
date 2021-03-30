@@ -130,11 +130,11 @@ public class IndexMapperImpl implements IndexMapper {
         }
 
         if (index.routingRequired()) {
-            TreeMap<Object, Object> map = new TreeMap<>();
+            TreeMap<String, Object> map = new TreeMap<>();
 
             map.put("required", true);
 
-            mapping.put("routing", map);
+            mapping.put("_routing", map);
         }
     }
 

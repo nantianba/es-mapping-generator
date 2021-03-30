@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>es-mapper</artifactId>
-        <groupId>zy</groupId>
+        <groupId>zy.ntb.es</groupId>
+        <artifactId>es-mapping</artifactId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -41,5 +41,7 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <finalName>es-mapping-generator</finalName>
+    </build>
 </project>
