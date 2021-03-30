@@ -26,7 +26,7 @@ jobs:
           java-version: 1.8
           server-id: releases
           # Nexus用户名环境变量
-          server-username: MAVEN_USERNAME
+          server-username: MAVEN_CENTRAL_USERNAME
           # Nexus明码环境变量
           server-password: MAVEN_CENTRAL_TOKEN
           # gpg短明码环境变量
@@ -40,16 +40,8 @@ jobs:
         # 环境变量设置
         env:
           # Nexus用户名,如果感觉不想裸露也能够配置到secrets中
-          MAVEN_USERNAME: xxx
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           # Nexus明码
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
           # gpg短明码
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
-      # Nexus主动部署
-      - name: Release on nexus
-        uses: monkeyWie/maven-nexus-release@v1
-        with:
-          # Nexus用户名
-          maven-repo-server-username: xxx
-          # Nexus明码
-          maven-repo-server-password: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
