@@ -1,0 +1,2 @@
+# es-mapping-generator
+基于自定义注解根据Java实体模型生成elasticsearch的mapping配置
