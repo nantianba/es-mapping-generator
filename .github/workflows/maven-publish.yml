@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          server-id: oosrh
+          server-id: ossrh
           # Nexus用户名环境变量
           server-username: MAVEN_CENTRAL_USERNAME
           # Nexus明码环境变量
