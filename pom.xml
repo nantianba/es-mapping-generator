@@ -50,7 +50,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
@@ -93,10 +93,10 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- 这个configuration必须配置，用于gpg非交互式明码输出 -->
+<!--                     这个configuration必须配置，用于gpg非交互式明码输出 -->
                     <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
+<!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
+<!--                        <arg>loopback</arg>-->
                     </gpgArguments>
                 </configuration>
             </plugin>
