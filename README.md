@@ -55,12 +55,12 @@ public class TestModel {
 ```
 - Generate the definition of index
 ```java
-        IndexDefinition indexDefinition = IndexMapperManager.getInstance().mapping(TestModel.class);
+IndexDefinition indexDefinition = IndexMapperManager.getInstance().mapping(TestModel.class);
 
-        System.out.println("indexDefinition.name() = " + indexDefinition.name());
-        System.out.println("indexDefinition.type() = " + indexDefinition.type());
-        System.out.println("indexDefinition.mapping() = " + indexDefinition.mapping());
-        System.out.println("indexDefinition.setting() = " + indexDefinition.setting());
+System.out.println("indexDefinition.name() = " + indexDefinition.name());
+System.out.println("indexDefinition.type() = " + indexDefinition.type());
+System.out.println("indexDefinition.mapping() = " + indexDefinition.mapping());
+System.out.println("indexDefinition.setting() = " + indexDefinition.setting());
 ```
 Get the result 
 ```json
