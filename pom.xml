@@ -7,7 +7,7 @@
     <groupId>com.github.nantianba</groupId>
     <artifactId>es-mapping</artifactId>
     <packaging>pom</packaging>
-    <version>0.1</version>
+    <version>0.1.1-SNAPSHOT</version>
     <modules>
         <module>es-mapping-generator</module>
     </modules>
