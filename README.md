@@ -10,7 +10,7 @@ Binaries are deployed on Maven Central, you can import the artifacts to your pro
 <dependency>
     <groupId>com.github.nantianba</groupId>
     <artifactId>es-mapping-generator</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 </dependency>
 ```
 ## Core Api
