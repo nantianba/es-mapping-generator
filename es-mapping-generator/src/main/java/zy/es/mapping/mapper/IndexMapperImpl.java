@@ -13,6 +13,8 @@ import zy.es.mapping.exception.IndexValidateException;
 import zy.es.mapping.tools.Json;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -101,7 +103,6 @@ public class IndexMapperImpl implements IndexMapper {
     }
 
     private void validate(Class clazz) throws IndexValidateException {
-        // TODO: 2021/3/29
         Index index = (Index) clazz.getDeclaredAnnotation(Index.class);
 
         if (index == null) {
@@ -157,8 +158,8 @@ public class IndexMapperImpl implements IndexMapper {
         DataType type = mapType(field, mapping);
 
         description.put("type", type.value);
-        if (type == DataType.OBJECT) {
-            description.put("properties", mapFields(field.getType()));
+        if (type == DataType.OBJECT || type == DataType.NESTED) {
+            description.put("properties", mapFields(extractFromArray(field, field.getType())));
         }
 
         if (mapping != null) {
@@ -166,6 +167,16 @@ public class IndexMapperImpl implements IndexMapper {
         }
 
         return description;
+    }
+
+    private Class extractFromArray(Field field, Class<?> type) {
+        if (type.isArray()) {
+            return type.getComponentType();
+        }
+        if (List.class.isAssignableFrom(type)) {
+            return (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+        }
+        return type;
     }
 
     private DataType mapType(Field field, Mapping mapping) {
@@ -185,10 +196,15 @@ public class IndexMapperImpl implements IndexMapper {
             javaType = javaType.getComponentType();
         }
 
+        if (List.class.isAssignableFrom(javaType)) {
+            javaType = (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+        }
+
         if (javaType.isPrimitive()) {
             return DataType.fromPrimitive(javaType);
         }
-        if (javaType.isAssignableFrom(Number.class)) {
+
+        if (Number.class.isAssignableFrom(javaType)) {
             return DataType.fromNumber(javaType);
         }
 

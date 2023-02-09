@@ -36,6 +36,9 @@ public enum DataType {
     NESTED("nested"),
 
     OBJECT("object"),
+    /**
+     * todo not supported for now
+     */
     ARRAY("array"),
 
     /**
