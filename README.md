@@ -48,7 +48,7 @@ public class TestModel {
     public String geo;
 
     public static class B {
-        @Mapping(type = DataType.TEXT, index = false)
+        @Mapping(type = DataType.KEYWORD)
         public String test;
     }
 }
