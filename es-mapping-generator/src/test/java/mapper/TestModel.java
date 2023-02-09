@@ -18,20 +18,7 @@ import java.util.List;
 public class TestModel {
     @Mapping(index = false)
     public int[] arr;
-
-    @Mapping(index = false)
-    public List<Integer> arr2;
-    @Mapping(index = false)
-    public Integer integer2;
-    @Mapping(type = DataType.KEYWORD)
-    public List<String> arr3;
-    @Mapping(type = DataType.NESTED)
-    public B[] barr;
-
-    @Mapping(type = DataType.NESTED)
-    public B b;
-    @Mapping()
-    public List<B> blist;
+    public B[] b;
     @Mapping(type = DataType.KEYWORD)
     public String keyword;
     @Mapping(type = DataType.DATE, format = "epoch_millis")

@@ -66,7 +66,7 @@ Get the result
 ```json
 indexDefinition.name() = test
 indexDefinition.type() = test_type
-indexDefinition.mapping() = {
+indexDefinition.mapping() =  {
   "_routing": {
     "required": true
   },
@@ -77,7 +77,11 @@ indexDefinition.mapping() = {
       "type": "integer"
     },
     "b": {
-      "properties": {},
+      "properties": {
+        "test": {
+          "type": "keyword"
+        }
+      },
       "type": "object"
     },
     "geo": {
