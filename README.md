@@ -63,7 +63,7 @@ System.out.println("indexDefinition.mapping() = " + indexDefinition.mapping());
 System.out.println("indexDefinition.setting() = " + indexDefinition.setting());
 ```
 Get the result 
-```json
+```
 indexDefinition.name() = test
 indexDefinition.type() = test_type
 indexDefinition.mapping() =  {
